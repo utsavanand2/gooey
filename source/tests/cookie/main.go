@@ -1,16 +1,16 @@
-//go:build js && wasm
-// +build js,wasm
+//go:build wasm
 
 package main
 
 import (
+	"fmt"
 	"gooey/cookie"
 	"time"
 )
 
 func main() {
 	cookieStore := cookie.CookieStore
-
+	fmt.Println("wasm loaded")
 	err := cookieStore.Set(cookie.SetOptions{
 		Name:  "hello",
 		Value: "world",
